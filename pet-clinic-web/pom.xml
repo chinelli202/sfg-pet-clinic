@@ -30,7 +30,6 @@
 			<optional>true</optional>
 		</dependency>
 
-
 		<dependency>
 			<groupId>guru.springframework</groupId>
 			<artifactId>pet-clinic-data</artifactId>
@@ -113,4 +112,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	</project>
+	<packaging>war</packaging>
+</project>
