@@ -30,8 +30,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-	  # Install modules and skip tests before running tests further down
-	  - run: mvn install -DskipTests
+      - run: mvn install -DskipTests
       
       - run: mvn dependency:go-offline
 
@@ -39,7 +38,6 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
-	
 
       # run tests!
       - run: mvn integration-test
