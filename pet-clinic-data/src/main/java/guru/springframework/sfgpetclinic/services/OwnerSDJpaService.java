@@ -5,11 +5,14 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
+
+import org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -62,6 +65,12 @@ public class OwnerSDJpaService implements OwnerService {
     public void deleteById(Long aLong) {
         ownerRepository.deleteById(aLong);
     }
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		// TODO Auto-generated method stub
+		return ownerRepository.findAllByLastNameLike(lastName);
+	}
 
     //fragment
 }
